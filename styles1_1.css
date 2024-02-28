@@ -1,0 +1,123 @@
+/* set all components' margin to 0 */
+* {
+    margin: 0;
+}
+
+body {
+    background: rgb(51, 51, 51);
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* header settings */
+.header {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.header .left_menu,
+.header .logo,
+.header .session {
+    width: 60px;
+}
+
+.header .name {
+    flex: 1;
+    text-align: center;
+    font-size: larger;
+}
+
+/* main content settings */
+.main {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* center */
+.main .center {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Banner with form */
+.banner {
+    width: 100%;
+    /* Take full width */
+    /* Add your styles for the banner */
+}
+
+
+/* cards settings */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.card {
+    border-radius: 8px;
+    width: calc(33.333% - 40px); /* Three cards per row, minus the gap */
+    margin-bottom: 20px;
+    border: 1px solid #ffc0e1; /* Neon-like pink border */
+    box-shadow: 0 0 8px #ffc0e1; /* Outer glow */
+    align-items: stretch;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffc0e1; /* Outer glow */
+}
+
+.card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card .container {
+    padding: 2px 16px;
+}
+
+
+/* lateral menu */
+.main .left_menu {
+    padding-top: -20px;
+    width: 200px;
+    border-right: 2px solid rgb(114, 114, 114);
+}
+
+.main .left_menu h4 {
+    padding: 20px;
+}
+
+/* footer settings */
+.footer {
+    background-color: rgb(24, 24, 24);
+    height: 50px;
+    text-align: center;
+    padding-left: 0px;
+    font-size: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+hr {
+    height: 2px;
+    border: none;
+    margin-top: 0;
+    padding-top: 0;
+    background: rgb(155, 155, 155)
+}
+
+/*ffc0e1 - rosa
