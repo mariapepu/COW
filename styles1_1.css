@@ -36,44 +36,87 @@ body {
     min-height: 100vh;
 }
 
+/* lateral menu */
+.main .left_menu {
+    padding-top: -20px;
+    min-width: 200px;
+    border-right: 2px solid rgb(114, 114, 114);
+    min-height: 100vh;
+}
+
+.main .left_menu h4 {
+    padding: 20px;
+}
+
 /* center */
 .main .center {
     padding: 20px;
     flex-grow: 1;
-    display: flex;
     flex-direction: column;
 }
 
-/* Banner with form */
+/* banner with form */
 .banner {
-    width: 100%;
-    /* Take full width */
-    /* Add your styles for the banner */
+    width: 100% + 20px;
+    padding: -20px;
+    margin:-20px;
+    height: 400px;
+    background-image: url(assets/banner_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
 
+/* formulario */
+.search-form {
+    width: 70%;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.input-icon {
+    position: relative;
+    width: 250px; /* o el ancho que prefieras */
+  }
+  
+  .input-icon input {
+    width: 100%;
+    padding: 10px 10px 10px 35px; /* Ajusta el valor de padding-left para hacer espacio para el icono */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .input-icon .icon {
+    position: absolute;
+    left: 10px; /* Ajusta la posición horizontal del icono según sea necesario */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Ajusta el tamaño de tu icono */
+    height: auto;
+  }
 
 /* cards settings */
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 40px;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 
 .card {
     border-radius: 8px;
-    width: calc(33.333% - 40px); /* Three cards per row, minus the gap */
+    width: calc(33.333% - 40px);
     margin-bottom: 20px;
-    border: 1px solid #ffc0e1; /* Neon-like pink border */
-    box-shadow: 0 0 8px #ffc0e1; /* Outer glow */
+    border: 1px solid #ffc0e1;
+    box-shadow: 0 0 8px #ffc0e1;
     align-items: stretch;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px #ffc0e1; /* Outer glow */
+    box-shadow: 0 0 10px #ffc0e1;
 }
 
 .card img {
@@ -88,16 +131,18 @@ body {
     padding: 2px 16px;
 }
 
-
-/* lateral menu */
-.main .left_menu {
-    padding-top: -20px;
-    width: 200px;
-    border-right: 2px solid rgb(114, 114, 114);
+/* two columns */
+@media (max-width: 800px) {
+    .card {
+        width: calc(50% - 40px); /* 2 cards x row */
+    }
 }
 
-.main .left_menu h4 {
-    padding: 20px;
+/* one column */
+@media (max-width: 500px) {
+    .card {
+        width: calc(100% - 40px); /* 1 card x row */
+    }
 }
 
 /* footer settings */
