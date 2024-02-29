@@ -148,7 +148,8 @@ body {
 .button-container .search-button {
     border: none;
     padding: 10px;
-    background-color:  rgb(24, 24, 24);;
+    background-color: rgb(24, 24, 24);
+    ;
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
@@ -233,24 +234,27 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
-  }
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  th, td {
+    margin-bottom: 70px;
+}
+
+th,
+td {
     padding: 8px;
     text-align: left;
-  }
-  th {
+}
+
+th {
     background-color: #ffc0e1ab;
     color: white;
-  }
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: #f2f2f246;
-  }
-  tr:hover {
+}
+
+tr:hover {
     background-color: #aa688aab;
-  }
+}
 
 /* footer settings */
 .footer {
