@@ -11,6 +11,7 @@ body {
 
 /* header settings */
 .header {
+    background-color: rgb(24, 24, 24);
     height: auto;
     display: flex;
     align-items: center;
@@ -42,6 +43,7 @@ body {
     min-width: 200px;
     border-right: 2px solid rgb(114, 114, 114);
     min-height: 100vh;
+    max-height: 100%;
 }
 
 .main .left_menu h4 {
@@ -53,41 +55,37 @@ body {
     padding: 20px;
     flex-grow: 1;
     flex-direction: column;
+    max-height: fit-content;
 }
 
 /* banner with form */
 .banner {
     width: 100% + 20px;
-    ;
-    /* Ancho completo del contenedor padre */
     padding: -20px;
-    margin: -20px;
+    margin: -20px -20px -0px -20px;
     height: 400px;
-    /* Altura fija del banner */
     background-image: url('assets/banner_img.jpg');
-    /* Asegúrate de que la ruta de la imagen sea correcta */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    /* Centra la imagen de fondo */
     display: flex;
-    /* Utiliza flexbox para centrar el contenido */
     align-items: center;
-    /* Centra verticalmente el contenido del banner */
     justify-content: center;
-    /* Centra horizontalmente el contenido del banner */
 }
 
 /* formulario */
 .input-group {
     max-width: 500px;
-    /* Ancho máximo del grupo de entrada */
     width: 100%;
-    /* Ancho relativo al contenedor para permitir centrado */
     margin: 0 auto;
-    /* Centra horizontalmente */
     box-sizing: border-box;
-    /* Incluye el padding y el border en el ancho total */
+}
+
+.input-group h1 {
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 0 0 3px #252525de;
+    text-align: center;
 }
 
 .input-group form {
@@ -124,7 +122,7 @@ body {
     padding: 10px 10px 10px 35px;
     margin-bottom: 0;
     border-radius: 4px;
-    background-color: #cecece;
+    background-color: #e4e4e4;
     border: none;
 }
 
@@ -150,7 +148,7 @@ body {
 .button-container .search-button {
     border: none;
     padding: 10px;
-    background-color: #000;
+    background-color:  rgb(24, 24, 24);;
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
@@ -174,7 +172,15 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    margin-top: 100px;
+}
+
+.title {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    color: white;
+    text-shadow: 0 0 3px #474747de;
+    display: block;
 }
 
 .card {
@@ -223,16 +229,72 @@ body {
     }
 }
 
+/* table top destinations */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #ffc0e1ab;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f246;
+  }
+  tr:hover {
+    background-color: #aa688aab;
+  }
+
 /* footer settings */
 .footer {
     background-color: rgb(24, 24, 24);
-    height: 50px;
+    color: white;
     text-align: center;
-    padding-left: 0px;
-    font-size: 20px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    width: 100px;
+}
+
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 3px 0;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer-social img {
+    width: 36px;
+    height: auto;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.75em;
 }
 
 hr {
