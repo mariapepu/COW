@@ -1,0 +1,47 @@
+/* set all components' margin to 0 */
+* {
+    margin: 0;
+}
+
+body {
+    background: rgb(51, 51, 51);
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.jumbotron {
+    background: no-repeat center center url('assets/banner_img.jpg');
+    margin-bottom: 20px;
+    padding: 2rem 1rem;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    color: #000;
+}
+
+.card-text {
+    color: #000;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
