@@ -100,7 +100,7 @@ body {
     padding: -20px;
     margin: -20px -20px -0px -20px;
     height: 400px;
-    background-image: url('assets/banner_img.jpg');
+    background-image: url('../assets/banner_img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
