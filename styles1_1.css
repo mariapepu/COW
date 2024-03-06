@@ -40,14 +40,50 @@ body {
 /* lateral menu */
 .main .left_menu {
     padding-top: -20px;
-    min-width: 200px;
+    min-width: 250px;
     border-right: 2px solid rgb(114, 114, 114);
     min-height: 100vh;
     max-height: 100%;
 }
 
-.main .left_menu h4 {
+.left_menu hr {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-ul, .h3-menu {
+    margin-left: 5%;
+    font-weight: 200;
+}
+
+.h3-menu {
+    padding: 5px;
+    font-weight: 300;
+}
+
+.menu-li {
+    margin-bottom: 10px;
+}
+
+.h3-menu:hover, .menu-li:hover {
+    text-decoration: underline;
+}
+
+.main .left_menu h3 {
+    margin-left: 5%;
     padding: 20px;
+    font-weight: 300;
+}
+
+.main .left_menu ul {
+    margin-left: 10%;
+    font-weight: 200;
+}
+
+.main .left_menu li {
+    font-weight: 200;
+    margin-bottom: 10px;
 }
 
 /* center */
