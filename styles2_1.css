@@ -172,6 +172,10 @@ body {
     text-decoration: underline;
 }
 
+.container-fluid {
+    padding: 5%;
+}
+
 .card {
     text-decoration: none;
     color: whitesmoke;
