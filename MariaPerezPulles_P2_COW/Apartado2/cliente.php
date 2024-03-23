@@ -1,107 +1,353 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Important: Only recognizes CSS files if they are inside of css/ -->
-    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<title>Nexthouse</title>
-	</head>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+
+    <title>Bootstrap Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="bootstrap-4.3.1_v2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="bootstrap-4.3.1_v2/js/popper.min.js"></script>
+    <script src="bootstrap-4.3.1_v2/js/bootstrap.min.js"></script>
+    <script src="bootstrap-4.3.1_v2/js/bootstrap.offcanvas.js"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link href="styles_client.css" rel="stylesheet">
+</head>
+
 <body>
-    <nav class="navbar bg-primary justify-content-between text-white">
-        <img src="next.png">
-        <h3>Welcome to Nexthouse, we hope you find yours!</h3>
-        <a class="btn btn-outline-light" type="button" href="sign_up.php">Sign up</a>
-    </nav>
-	<div class="container-fluid">
-        <div class="row destFinder my-3 mx-1 p-3">
-            <form action="http://localhost/COW/S2_3/A2/servidor.php" method="POST">
-                <div class="form-row align-items-center">
-                    <div class="col form-group">
-                        <label for="destination">Destination</label>
-                        <input type="text" name="destination" id="destination" 
-                        placeholder="e.g. Barcelona" size="20" minlength="1" maxlength="20">
-                    </div>
-                    <div class="col form-group">
-                        <label for="checkin">Check-in</label>
-                        <input type="date" name="checkin" id="checkin" value="2022-03-28">
-                    </div>
-                    <div class="col form-group">
-                        <label for="checkout">Checkout</label>
-                        <input type="date" name="checkout" id="checkout" value="2022-03-30">
-                    </div>
-                    <div class="col form-group">
-                        <label for="guests">Guests</label><br>
-                        <input type="number" name="guests" min="1" max="20" id="guests" value="1">
-                    </div>
-                    <div class="col form-group mt-2">
-                        <br>
-                        <input type="submit" id="search_button" value="Search">
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="row text-center bg-light">
-            <div class="menu col-sm-3 mt-3 mb-3">
-                <h3>Countries</h3>
-                <div class="list-group">
-                    <a href="https://www.google.com/search?q=spain" class="list-group-item">Spain <span
-                        class="badge">10</span></a>
-                    <a href="https://www.google.com/search?q=brazil" class="list-group-item">Brazil</a>
-                    <a href="https://www.google.com/search?q=portugal" class="list-group-item">Portugal</a>
-                    <a href="https://www.google.com/search?q=italy" class="list-group-item">Italy</a>
+    <div class="bs-canvas-overlay bs-canvas-anim bg-dark position-fixed w-100 h-100">
+    </div>
+
+    <!-- contenido que debe ser empujado por la nav bar -->
+    <div class="bs-offset-main bs-canvas-anim">
+        <!-- barra superior -->
+        <nav class="navbar">
+            <button class="btn" type="button" data-toggle="canvas" data-target="#bs-canvas-left" aria-expanded="false"
+                aria-controls="bs-canvas-left">&#9776;</button>
+            <div>
+                <img src="../assets\logo_simple.webp" alt="logo" width="30" height="30">
+                <h5 class="d-inline-block align-text-top">HOTELES.COM</h5>
+            </div>
+            <div class="dropdown">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                    <img src="../assets\icons\account_circle.svg" alt="sesion">
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="sign_up.php">Sign Up</a>
+                    <a class="dropdown-item disabled" href="#">Sign In</a>
                 </div>
             </div>
-            <div class="center col-sm-6 mt-3 mb-3">
-                <h3>Search hotels at Google here!</h3>
-                <form action="http://www.google.com/search" method="GET" id="search-form">
-                    <input type="text" name="q"/>
-                    <input type="submit" value="Buscar" />
-                </form>
+        </nav>
+
+        <main role="main">
+            <!-- jumbotron -->
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <h1 class="jumbotron-heading section-title">¿Dónde quieres viajar?</h1>
+                    <form action="./servidor.php" method="POST">
+                        <div class="form-group">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <img src="../assets/icons/location.svg" class="icon" alt="Icono">
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control"
+                                    placeholder="Introduce una ciudad, pueblo o lugar de interés" name="destination"
+                                    required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="date" class="form-control" placeholder="Fecha entrada" name="checkin">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="date" class="form-control" placeholder="Fecha salida" name="checkout">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <img src="../assets/icons/group.svg" class="icon" alt="Icono">
+                                        </div>
+                                    </div>
+                                    <select id="inputState" class="form-control" placeholder="Número de personas"
+                                        name="guests">
+                                        <option selected disabled>Número de personas</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn search-button btn-lg btn-block">Buscar</button>
+                            </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- cards -->
+            <div class="album py-5">
+                <div class="section-title">
+                    <h1>Hoteles más vistos por los viajeros</h1>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="https://carmenshotel.com/" class="card" target="_blank">
+                                    <img src="../assets/hotel-images/hamilton.jpg">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                        <div class="container">
+                                            <h4><b>Hotel 4</b></h4>
+                                            <p>Hamilton, Canada</p>
+                                            <p style="color:#ffc0e1">4 <img src="../assets/icons/star.svg"
+                                                    style="width:13px; height:13px;">
+                                            </p>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="https://carmenshotel.com/" class="card" target="_blank">
+                                    <img src="../assets/hotel-images/hamilton.jpg">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                        <div class="container">
+                                            <h4><b>Hotel 4</b></h4>
+                                            <p>Hamilton, Canada</p>
+                                            <p style="color:#ffc0e1">4 <img src="../assets/icons/star.svg"
+                                                    style="width:13px; height:13px;">
+                                            </p>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="https://carmenshotel.com/" class="card" target="_blank">
+                                    <img src="../assets/hotel-images/hamilton.jpg">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                        <div class="container">
+                                            <h4><b>Hotel 4</b></h4>
+                                            <p>Hamilton, Canada</p>
+                                            <p style="color:#ffc0e1">4 <img src="../assets/icons/star.svg"
+                                                    style="width:13px; height:13px;">
+                                            </p>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="https://carmenshotel.com/" class="card" target="_blank">
+                                    <img src="../assets/hotel-images/hamilton.jpg">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                        <div class="container">
+                                            <h4><b>Hotel 4</b></h4>
+                                            <p>Hamilton, Canada</p>
+                                            <p style="color:#ffc0e1">4 <img src="../assets/icons/star.svg"
+                                                    style="width:13px; height:13px;">
+                                            </p>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="https://carmenshotel.com/" class="card" target="_blank">
+                                    <img src="../assets/hotel-images/hamilton.jpg">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                        <div class="container">
+                                            <h4><b>Hotel 4</b></h4>
+                                            <p>Hamilton, Canada</p>
+                                            <p style="color:#ffc0e1">4 <img src="../assets/icons/star.svg"
+                                                    style="width:13px; height:13px;">
+                                            </p>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="https://carmenshotel.com/" class="card" target="_blank">
+                                    <img src="../assets/hotel-images/hamilton.jpg">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                        <div class="container">
+                                            <h4><b>Hotel 4</b></h4>
+                                            <p>Hamilton, Canada</p>
+                                            <p style="color:#ffc0e1">4 <img src="../assets/icons/star.svg"
+                                                    style="width:13px; height:13px;">
+                                            </p>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-3 mt-3 mb-3">
-                <h3>Latest deals!</h3>
-                <img src="hotel.jpg" class="img-thumbnail">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Price per night</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Barcelona</td>
-                        <td>30€</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>São Paulo</td>
-                        <td>10€</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Lisboa</td>
-                        <td>20€</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">4</th>
-                        <td>Roma</td>
-                        <td>40€</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="py-5">
+                <div class="container">
+                    <div class="section-title">
+                        <h1>¿No sabes dónde viajar?</h1>
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <thead class="thead">
+                            <tr>
+                                <th scope="col">Posición</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Puntuación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Tokio, Japón</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>París, Francia</td>
+                                <td>9.3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Nueva York, EE.UU.</td>
+                                <td>9.0</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Roma, Italia</td>
+                                <td>8.8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Sídney, Australia</td>
+                                <td>8.6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+        </main>
+    </div>
+
+    <!-- Off-canvas sidebar markup, left/right or both. -->
+    <div id="bs-canvas-left" class="bs-canvas bs-canvas-anim bs-canvas-left position-fixed h-100" data-offset="true"
+        data-overlay="false">
+        <header class="bs-canvas-header p-3">
+            <h4 class="d-inline-block mb-0">Menú</h4>
+            <button type="button" class="bs-canvas-close close" aria-label="Close"><span aria-hidden="true"
+                    class="text-dark">&times;</span></button>
+        </header>
+        <div class="bs-canvas-content px-3 py-5">
         </div>
-        <div class="row text-center bg-light">
-            <img src="banner.jpg" class="img-thumbnail">
-        </div>
-        <div class="m-1">
-            <h6>© 2022 Nexthouse, Inc.</h6>
+        <!-- inside nav bar -->
+        <div class="collapse bg-dark" id="navbarHeader"></div>
+        <div class="bs-canvas-content px-3 py-5">
+            <div class="list-group my-5">
+                <h3 class="h3-menu">Inicio de session</h3>
+                <hr class="menu-hr">
+                <h3 class="h3-menu">Explorar</h3>
+                <h3 class="h3-menu">Escribenos</h3>
+                <h3 class="h3-menu">Cookies</h3>
+                <hr class="menu-hr">
+                <h3 class="h3-menu">Filtros</h3>
+                <ul class="menu-ul">
+                    <li class="menu-li">Estrellas</li>
+                    <li class="menu-li">Precio</li>
+                    <li class="menu-li">Valoración de usuarios</li>
+                    <li class="menu-li">Ubicación</li>
+                    <li class="menu-li">Tipo de alojamiento</li>
+                    <li class="menu-li">Facilidades</li>
+                    <li class="menu-li">Disponibilidad</li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <footer class="text-muted">
+        <div class="container">
+            <div class="row">
+                <p class="col-md-4">
+                    <img src="../assets/logo_simple.webp" alt="Logo hoteles.com" class="footer-logo">
+                </p>
+                <div class="col-md-4" style="text-align: center;">
+                    <p><a href="/sobre-nosotros">Sobre nosotros</a></p>
+                    <p><a href="/contacto">Contacto</a></p>
+                    <p><a href="/terminos-y-condiciones">Términos y Condiciones</a></p>
+                    <p><a href="/politica-de-privacidad">Política de Privacidad</a></p>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="../assets/icons/facebook.svg" alt="Facebook" />
+                    </a>
+                    <a href="https://www.twitter.com/" target="_blank">
+                        <img src="../assets/icons/twitter.svg" alt="Twitter" />
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="../assets/icons/instagram.svg" alt="Instagram" />
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="footer-copy">&copy; 2024 Hoteles.com. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
+
+
+
 </html>

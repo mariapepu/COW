@@ -30,7 +30,6 @@
       }
     }
   </style>
-</head>
 <link href="styles2_1.css" rel="stylesheet">
 </head>
 
@@ -323,7 +322,6 @@
           <p class="footer-copy">&copy; 2024 Hoteles.com. Todos los derechos reservados.</p>
         </div>
       </div>
-    </div>
     </div>
   </footer>
 
