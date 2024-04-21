@@ -1,0 +1,66 @@
+html, body {
+    height: 100%; /* Establece la altura del html y del body al 100% */
+    margin: 0; /* Elimina el margen predeterminado */
+    background-image: url('../../assets/banner_img.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	vertical-align: middle;
+}
+
+.card {
+	background: rgb(51, 51, 51);
+	color: whitesmoke;
+	margin-top: 100px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+hr {
+	background-color: #fe8ec8;
+}
+
+.card-title {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.card-body {
+	padding: 40px;
+}
+
+.btn-primary {
+	text-decoration: none;
+	color: rgb(51, 51, 51);
+	background-color: #fe8ec8;
+	border: none;
+	padding: 10px 0;
+	font-size: 18px;
+}
+
+.btn-primary:hover {
+	color: rgb(51, 51, 51);
+	background-color: #f4aad0;
+	text-decoration: none;
+}
+
+.form-check-label {
+	margin-bottom: 20px;
+}
+
+.form-check-input {
+	margin-top: 5px;
+}
+
+.btn:focus, .btn:active {
+	color: rgb(51, 51, 51);
+    background-color: #fe8ec8;
+    box-shadow: none;
+    outline: none; 
+}
